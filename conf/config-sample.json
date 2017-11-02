@@ -1,0 +1,16 @@
+{
+  "http_host": "localhost",
+  "http_port": "8090",
+  "https_host": "localhost",
+  "https_port": "8098",
+  "prefix": "",
+  "logger": true,
+  "encryption": {
+    "key": "15e739684df2c0136bf7236b3ea17ee5",
+    "iv": "bf7236b3ea17ee51"
+  },
+  "server": {
+    "host": "localhost",
+    "port": "18890"
+  }
+}

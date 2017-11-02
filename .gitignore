@@ -1,0 +1,8 @@
+.idea
+client
+client.log
+server
+server.log
+src/github.com
+pkg
+conf/config.json
