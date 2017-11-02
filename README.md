@@ -7,11 +7,11 @@ Client-server application that can work as an HTTP proxy server
 * SSL encryption of traffic between the client and the server
 * can work as an HTTP proxy server (not HTTPS)
 
-# How it works
+## How it works
 
 ![](./doc/groxy.png)
 
-# Build
+## Build
 
 ```
 git clone https://github.com/toolsparty/groxy
@@ -20,7 +20,7 @@ go build client
 go build server
 ```
 
-#Example of use
+## Example of use
 
 nginx configuration (ex. /etc/nginx/conf.d/groxy.conf)
 ```
