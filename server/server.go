@@ -1,18 +1,19 @@
-package main
+package server
 
 import (
-	"config"
-	"handlers"
 	"log"
 	"net/http"
-	logger3 "logger"
 	"os"
 	"os/signal"
 	"syscall"
+
+	"github.com/toolsparty/groxy/handlers"
+	conf2 "github.com/toolsparty/groxy/conf"
+	logger2 "github.com/toolsparty/groxy/logger"
 )
 
-var conf = config.NewConfiguration()
-var logg = logger3.NewLogger("server", conf)
+var conf = conf2.NewConfiguration()
+var logg = logger2.NewLogger("server", conf)
 
 func main() {
 	defer logg.Close()

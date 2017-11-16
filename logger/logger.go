@@ -5,7 +5,8 @@ import (
 	"log"
 	"time"
 	"strings"
-	"config"
+
+	"github.com/toolsparty/groxy/conf"
 )
 
 type LogInterface interface {
@@ -72,7 +73,7 @@ func (fl *FileLog) Close() {
 	fl.Source.Close()
 }
 
-func NewLogger(fileName string, conf *config.Configuration) *FileLog {
+func NewLogger(fileName string, conf *conf.Configuration) *FileLog {
 	fl := &FileLog{Enable: conf.Logger, FileName: fileName}
 	fl.Create()
 	return fl

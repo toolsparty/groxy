@@ -1,18 +1,19 @@
-package main
+package client
 
 import (
-	"config"
-	"handlers"
 	"log"
 	"net/http"
 	"fmt"
-	logger2 "logger"
 	"os"
 	"os/signal"
 	"syscall"
+
+	"github.com/toolsparty/groxy/conf"
+	"github.com/toolsparty/groxy/handlers"
+	logger2 "github.com/toolsparty/groxy/logger"
 )
 
-var cfg = config.NewConfiguration()
+var cfg = conf.NewConfiguration()
 var logger = logger2.NewLogger("client", cfg)
 
 func main() {

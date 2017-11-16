@@ -1,20 +1,21 @@
 package handlers
 
 import (
-	"config"
 	"net/http"
 	"fmt"
 	"encoding/json"
 	"io/ioutil"
 	"crypto/tls"
-	"encrypt"
 	"errors"
-	"logger"
 	"strings"
+
+	"github.com/toolsparty/groxy/conf"
+	"github.com/toolsparty/groxy/logger"
+	"github.com/toolsparty/groxy/encrypt"
 )
 // http handler
 type Server struct {
-	Config *config.Configuration
+	Config *conf.Configuration
 	Logger *logger.FileLog
 	Encoder *encrypt.Crypt
 }
@@ -153,7 +154,7 @@ func (h Server) Decode(data []byte) (*ClientRequest, error) {
 	return cr, nil
 }
 
-func NewServer(conf *config.Configuration, logger *logger.FileLog) (*Server, error) {
+func NewServer(conf *conf.Configuration, logger *logger.FileLog) (*Server, error) {
 	encoder, err := encrypt.NewCrypt(conf.Encryption.GetKey(), conf.Encryption.GetIv())
 	if err != nil {
 		return nil, err
