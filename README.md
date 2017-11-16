@@ -13,11 +13,10 @@ Client-server application that can work as an HTTP proxy server
 
 ## Build
 
-```
+``` bash
 git clone https://github.com/toolsparty/groxy
-cd groxy
-go build client
-go build server
+cd ./groxy
+make build
 ```
 
 ## Example of use
@@ -59,6 +58,12 @@ server {
 ```
 
 groxy config (conf/config.json)
+
+copy or rename ./conf/config-sample.json as ./conf/config.json
+```
+cp ./conf/config-sample.json ./conf/config.json
+```
+edit ./conf/config.json
 ```json
 {
   "http_host": "localhost",
